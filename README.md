@@ -14,8 +14,6 @@ Bu proje, jeotermal enerji üretim tesislerinden elde edilen verileri analiz etm
 - **Statsmodels** (ARIMA ve SARIMA modelleme)
 - **Prophet** (Facebook Prophet ile zaman serisi tahmini)
 - **XGBoost** (Makine öğrenmesi tabanlı regresyon modeli)
-- **LightGBM** (Gelişmiş zaman serisi tahmini için kullanıldı)
-- **LSTM (TensorFlow/Keras)** (Derin öğrenme modeli ile enerji üretimi tahmini)
 
 ## 📊 Dashboard İçeriği
 
@@ -34,10 +32,7 @@ Bu proje, jeotermal enerji üretim tesislerinden elde edilen verileri analiz etm
 - Yüksek pozitif veya negatif korelasyona sahip değişkenler belirlendi.
 
 ### **4️⃣ Enerji Üretim Tahminleri**
-- **ARIMA & SARIMA:** Geleneksel istatistiksel zaman serisi modelleri kullanılarak tahmin yapıldı.
-- **Prophet:** Facebook Prophet modeli ile üretim tahmini gerçekleştirildi.
-- **LSTM:** Derin öğrenme tabanlı LSTM modeli ile enerji üretimi tahmin edildi.
-- **XGBoost & LightGBM:** Gecikmeli değişkenler kullanarak gelişmiş tahminleme yapıldı.
+- **XGBoost:** Gecikmeli değişkenler kullanarak gelişmiş tahminleme yapıldı.
 
 ### **5️⃣ Anomali Tespiti**
 - IQR (Interquartile Range) yöntemiyle anormal veri noktaları belirlendi.
