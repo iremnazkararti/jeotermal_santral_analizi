@@ -1,0 +1,6 @@
+echo duzenlenmis_zaman_serisi.csv >> .gitignore
+echo streamlit_env/ >> .gitignore
+echo *.dll >> .gitignore
+duzenlenmis_zaman_serisi.csv 
+streamlit_env/ 
+*.dll 
