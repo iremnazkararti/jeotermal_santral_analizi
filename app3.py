@@ -10,11 +10,10 @@ import gdown  # Google Drive'dan veri indirmek için
 # 📌 Dashboard Ayarları
 st.set_page_config(page_title="⚡ Enerji Üretim Dashboard", layout="wide")
 
-# 📌 **Veriyi Yükleme & Ön İşleme**
 @st.cache_data
 def load_data():
-    file_id = "1_1jTfHB6mhA7EqVT9N0FXQNqUNMKm8f0"  # Google Drive'daki dosyanın ID'si
-    url = f"https://drive.google.com/uc?export=download&id={file_id}"  # Doğrudan indirme linki
+    file_id = "1ERlscTm0SV49syHXzyMEvW6pvpPVD3qK"  # Yeni Google Drive ID'si
+    url = f"https://drive.google.com/uc?export=download&id={file_id}"  # Yeni indirme linki
     output = "dataset.csv"
     
     try:
@@ -32,6 +31,7 @@ def load_data():
     except Exception as e:
         st.error(f"📛 Veri yüklenirken hata oluştu: {e}")
         return pd.DataFrame()  # Hata durumunda boş dataframe döndür
+
 
 df = load_data()  # Veriyi yükle
 
