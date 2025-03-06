@@ -101,7 +101,7 @@ elif view_option == "📉 Korelasyon":
 
 # 📉 **5️⃣ Tahminleme (Forecasting)**
 elif view_option == "🔮 Tahminler":
-    st.subheader("🔮 Enerji Üretim Tahminleri")
+    st.subheader("🔮 Enerji Üretim Tahminleri")
     model_option = st.selectbox("Tahmin Modeli:", ["XGBoost"])
     days = st.slider("Kaç Günlük Tahmin Yapılsın?", 30, 365, 100)
 
@@ -110,34 +110,19 @@ elif view_option == "🔮 Tahminler":
             df_daily = df.resample("D").mean()
             forecast_sinem, forecast_deniz = None, None
 
+     
             if model_option == "XGBoost":
                 df_xgb = df_daily.copy()
-
-                # Lag değişkenlerini oluştur
                 for lag in range(1, 8):
                     df_xgb[f"sinem_guc_net_lag{lag}"] = df_xgb["sinem_guc_net"].shift(lag)
                     df_xgb[f"deniz_guc_net_lag{lag}"] = df_xgb["deniz_guc_net"].shift(lag)
-
-                # Eksik verileri bir önceki değerle doldur (ÖNEMLİ: dropna yerine bunu ekledim!)
-                df_xgb.fillna(method="bfill", inplace=True)
-
-                # Kullanılacak özellikler
+                df_xgb.dropna(inplace=True)
                 features = [col for col in df_xgb.columns if "lag" in col]
-
-                # Veri eksik mi, kontrol et!
-                st.write("📊 `df_xgb` İlk 5 Satır:", df_xgb.head())
-                st.write("🛠️ Kullanılan Özellikler:", features)
-
-                # Veriyi böl
                 X_train, X_test, y_train_sinem, y_test_sinem = train_test_split(df_xgb[features], df_xgb["sinem_guc_net"], test_size=0.2, shuffle=False)
                 X_train, X_test, y_train_deniz, y_test_deniz = train_test_split(df_xgb[features], df_xgb["deniz_guc_net"], test_size=0.2, shuffle=False)
-
-                # Modeli eğit
                 xgb_model_sinem, xgb_model_deniz = xgb.XGBRegressor(n_estimators=100), xgb.XGBRegressor(n_estimators=100)
                 xgb_model_sinem.fit(X_train, y_train_sinem)
                 xgb_model_deniz.fit(X_train, y_train_deniz)
-
-                # Tahmin yap
                 forecast_sinem = xgb_model_sinem.predict(df_xgb[features].iloc[-days:])
                 forecast_deniz = xgb_model_deniz.predict(df_xgb[features].iloc[-days:])
 
