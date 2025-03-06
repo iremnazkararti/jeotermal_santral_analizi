@@ -6,6 +6,8 @@ import gdown  # Google Drive'dan veri indirmek için
 import streamlit as st
 import pandas as pd
 import gdown  # Google Drive'dan veri indirmek için
+from sklearn.model_selection import train_test_split
+
 
 # 📌 Dashboard Ayarları
 st.set_page_config(page_title="⚡ Enerji Üretim Dashboard", layout="wide")
