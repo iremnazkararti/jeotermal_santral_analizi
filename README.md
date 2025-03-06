@@ -1,0 +1,1 @@
+# jeotermal_santral_analiz
