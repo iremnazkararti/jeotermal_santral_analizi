@@ -11,8 +11,6 @@ Bu proje, jeotermal enerji üretim tesislerinden elde edilen verileri analiz etm
 - **Pandas** (Veri manipülasyonu)
 - **NumPy** (Sayısal hesaplamalar)
 - **Matplotlib & Plotly** (Veri görselleştirme)
-- **Statsmodels** (ARIMA ve SARIMA modelleme)
-- **Prophet** (Facebook Prophet ile zaman serisi tahmini)
 - **XGBoost** (Makine öğrenmesi tabanlı regresyon modeli)
 
 ## 📊 Dashboard İçeriği
