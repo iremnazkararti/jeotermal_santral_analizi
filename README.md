@@ -1,4 +1,3 @@
-# jeotermal_santral_analiz
 # Enerji Üretim Analizi ve Tahminleme Dashboard'u
 
 ## 📌 Proje Açıklaması
@@ -43,26 +42,7 @@ Bu proje, jeotermal enerji üretim tesislerinden elde edilen verileri analiz etm
 ### **5️⃣ Anomali Tespiti**
 - IQR (Interquartile Range) yöntemiyle anormal veri noktaları belirlendi.
 - Anormal değerler grafiksel olarak görselleştirildi.
-
-## 📌 Kurulum & Çalıştırma
-1. **Gereksinimleri yükleyin:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. **Streamlit uygulamasını başlatın:**
-   ```bash
-   streamlit run app3.py
-   ```
-3. **Tahminleme için Google Drive bağlantısını sağlayın** (Eğer Colab kullanıyorsanız):
-   ```python
-   from google.colab import drive
-   drive.mount('/content/drive')
-   ```
-
-## 📈 Model Performansı ve Karşılaştırma
-- **Hata Metrikleri (MAE, RMSE)** kullanılarak modellerin doğrulukları karşılaştırıldı.
-- Prophet, SARIMA, XGBoost, LightGBM ve LSTM modelleri üzerinden hata dağılımları görselleştirildi.
-
+- 
 ## 📬 İletişim
 Bu proje hakkında daha fazla bilgi almak veya katkıda bulunmak için benimle iletişime geçebilirsiniz. 🎯
 iremnazkararti@gmail.com
